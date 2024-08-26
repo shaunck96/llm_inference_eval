@@ -14,9 +14,9 @@ import ast
 from jinja2 import Template
 import json
 
-topics = pd.read_parquet(r"/Workspace/Users/sshibu@pplweb.com/GPU_End_To_End_Code_Execution/Production_Code/transcriptions/gpu_transcriptions_redacted_topics_2024_07_31.parquet")
+topics = pd.read_parquet(r"gpu_transcriptions_redacted_topics_2024_07_31.parquet")
 
-with open(r"/Workspace/Users/sshibu@pplweb.com/CS_PA_NLP/mp3_files/topics/topic_og.json", "r") as f:
+with open(r"topic_og.json", "r") as f:
     json_data = f.read()
 
     data = json.loads(json_data)
@@ -236,7 +236,7 @@ rendered_html = template.render(
 )
 
 # Step 4: Save the rendered HTML to a file
-output_path = "/Workspace/Users/sshibu@pplweb.com/CS_PA_NLP/call_classification_summary.html"
+output_path = "call_classification_summary.html"
 with open(output_path, "w") as f:
     f.write(rendered_html)
 
