@@ -14,8 +14,8 @@ import ast
 
 def merger(anonymized_list):
     return " ".join([trans['text'] for trans in anonymized_list])
-transcriptions = pd.read_parquet(r"/Workspace/Users/sshibu@pplweb.com/GPU_End_To_End_Code_Execution/Production_Code/transcriptions/gpu_transcriptions_2024_07_31.parquet")
-redacted = pd.read_parquet(r"/Workspace/Users/sshibu@pplweb.com/GPU_End_To_End_Code_Execution/Production_Code/transcriptions/gpu_transcriptions_redacted_2024_07_31.parquet")
+transcriptions = pd.read_parquet(r"gpu_transcriptions_2024_07_31.parquet")
+redacted = pd.read_parquet(r"gpu_transcriptions_redacted_2024_07_31.parquet")
 
 
 transcriptions = pd.concat([transcriptions, redacted], axis=1)[['transcription', 'anonymized']]
