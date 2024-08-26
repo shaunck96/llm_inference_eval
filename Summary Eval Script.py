@@ -9,7 +9,7 @@
 
 import pandas as pd
 
-summaries = pd.read_parquet("/Workspace/Users/sshibu@pplweb.com/GPU_End_To_End_Code_Execution/Production_Code/Deployment Code/call_sid_based/benchmarking_results/gpu_transcriptions_redacted_summary_benchmarking.parquet")
+summaries = pd.read_parquet("gpu_transcriptions_redacted_summary_benchmarking.parquet")
 summaries
 
 
