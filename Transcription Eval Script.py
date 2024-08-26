@@ -99,8 +99,8 @@ def merger(anonymized_list):
 
 today = datetime.now().date() - timedelta(days=14)
 today_str = today.strftime('%Y_%m_%d')
-base_dir = "/Workspace/Users/sshibu@pplweb.com/GPU_End_To_End_Code_Execution/audio_files"
-dbfs_path = f"/Workspace/Users/sshibu@pplweb.com/GPU_End_To_End_Code_Execution/audio_files/{today_str}"
+base_dir = "audio_files"
+dbfs_path = f"audio_files/{today_str}"
 
 file_names = [os.path.join(dbfs_path, f) for f in os.listdir(dbfs_path)][:20]
 half_size = len(file_names) // 2
@@ -135,7 +135,7 @@ merged_df = transcription_df_medium.merge(transcription_df_large, on='file', suf
 merged_df['transcription_medium'] = merged_df['transcription_medium'].apply(merger)
 merged_df['transcription_large'] = merged_df['transcription_large'].apply(merger)
 
-merged_df.to_csv(r'/Workspace/Users/sshibu@pplweb.com/GPU_End_To_End_Code_Execution/Production_Code/Deployment Code/evaluation/transcription_eval.csv')
+merged_df.to_csv(r'transcription_eval.csv')
 
 # COMMAND ----------
 
